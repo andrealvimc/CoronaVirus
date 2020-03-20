@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+<h1>Coronavirus Tracker</h1>
 
-In the project directory, you can run:
+Um rastreador de casos de coronavírus pelo mundo, mostrando os casos de cada país
 
-### `yarn start`
+<p>
+    <a href="https://Andre-Alvim.github.io/CoronaVirus">Preview</a> |
+    <a href="https://github.com/Andre-Alvim/CoronaVirus/tree/master/src">Código Fonte</a>
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="docs/app4.gif">
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+</div>
 
-### `yarn test`
+# Techs used
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<b>Feito com</b>
 
-### `yarn build`
+1. [ReactJS](https://reactjs.org)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<b>Dependências</b>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. [React(common react app)](https://reactjs.org)
+2. [react-google-maps](https://github.com/tomchentw/react-google-maps)
+3. [styled-components](https://styled-components.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Como countribuir?
 
-### `yarn eject`
+1. Faça um fork desse repositório
+2. Crie uma branch com sua modificação utilizando o comando `git checkout -b feature`
+3. Faça um commit com suas alterações utilizando o comando `git commit -m "feat: Minha modificação"`
+4. Dê push para o seu repositório utilizando o comando `git push -u origin feature`
+5. Faça um pull request para esse repositório
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Como dar build?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Dê clone no repositório utilizando o comando `git clone git@github.com:Andre-Alvim/CoronaVirus.git`
+2. Entre na pasta do repositório utilizando o comando `cd CoronaVirus`
+3. Utilize o comando `npm run build` ou `yarn run build`(se estiver utilizando yarn) para construir o projeto
+4. Entre na pasta build utilizando o comando `cd build`
+5. Projeto pronto pra uso :)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Licença
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Este ainda não utiliza nenhuma licença :/
