@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { GoogleMap, withGoogleMap, withScriptjs } from "react-google-maps";
 import MapMarker from "../MapMarker";
 
@@ -22,10 +22,8 @@ function Map({ countries }) {
     loadMapCapitals();
   }, [countries]);
 
-  console.log(mapCountries);
-
   return (
-    <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+    <GoogleMap defaultZoom={3} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
       {mapCountries.map(
         country =>
           country && (
@@ -44,4 +42,4 @@ function Map({ countries }) {
   );
 }
 
-export default withScriptjs(withGoogleMap(Map));
+export default memo(withScriptjs(withGoogleMap(Map)));

@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     html, body, #root {
+        background: #f9f9f9;
         height: 100%;
     }
 
     #root {
-        background: #f9f9f9;
         font-family: "Roboto", sans-serif;
     }
 

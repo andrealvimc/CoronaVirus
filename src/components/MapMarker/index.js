@@ -1,24 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Marker } from "react-google-maps";
-import CountryToolTip from "../CountryTooltip";
+import MapContext from "../MapWrapper/MapContext";
 
-function MapMarker({ country, coronaCountry }) {
-  const [show, setShow] = useState(false);
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-
+function MapMarker({
+  country: {
+    latlng: [lat, lng]
+  },
+  coronaCountry
+}) {
+  const { setCountry } = useContext(MapContext);
   return (
     <Marker
       key={`${Math.random()}`}
-      position={{ lat: country.latlng[0], lng: country.latlng[1] }}
-      onClick={event => {
-        setShow(old => !old);
-        setX(event.tb.clientX);
-        setY(event.tb.clientY);
+      position={{ lat, lng }}
+      onClick={() => {
+        setCountry(coronaCountry);
       }}
-    >
-      {show && <CountryToolTip x={x} y={y} country={coronaCountry} />}
-    </Marker>
+    />
   );
 }
 

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 import GlobalStyle from "./globalStyle";
 import { Container, Board } from "./styles";
-import Spinner from "./components/Spinner";
 import Country from "./components/Country";
 import Map from "./components/Map";
+import MapWrapper from "./components/MapWrapper";
+import Loading from "./components/Loading";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -23,28 +24,30 @@ function App() {
     loadCountries();
   }, []);
 
+  const memorizedCountries = useMemo(() => {
+    return countries.map(country => (
+      <Country key={country.country} country={country} />
+    ));
+  }, [countries]);
+
   return (
     <>
       <Container>
         <h1>Casos de Coronavírus pelo mundo</h1>
-        <Map
-          countries={countries}
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<Spinner />}
-          containerElement={<div style={{ height: `400px`, width: `800px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-        <Board>
-          {loading ? (
-            <Spinner />
-          ) : (
-            <ul>
-              {countries.map(country => (
-                <Country key={country.country} country={country} />
-              ))}
-            </ul>
-          )}
-        </Board>
+
+        <MapWrapper>
+          <Map
+            countries={countries}
+            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+            loadingElement={<Loading />}
+            containerElement={
+              <div style={{ height: `400px`, width: `100%` }} />
+            }
+            mapElement={<div style={{ height: `100%` }} />}
+          />
+        </MapWrapper>
+
+        <Board>{loading ? <Loading /> : <ul>{memorizedCountries}</ul>}</Board>
       </Container>
       <GlobalStyle />
     </>

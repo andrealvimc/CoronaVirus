@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: absolute;
-  background: #f4f4f4;
+  padding: 1em;
 `;
-
-export const Info = styled.div``;
